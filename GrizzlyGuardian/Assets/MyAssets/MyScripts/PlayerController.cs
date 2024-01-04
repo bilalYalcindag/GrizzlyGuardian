@@ -57,12 +57,28 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             animator.SetBool("yurume", true);
-          
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
+
         }
 
        else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
         {
            animator.SetBool("yurume",false);
+                               
+        }
+
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            animator.SetBool("yurume", true);
+
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
+            rb.AddForce(new Vector2(-3.5f, 0));
+
+        }
+
+        else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            animator.SetBool("yurume", false);
         }
 
 
